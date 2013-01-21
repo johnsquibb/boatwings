@@ -1,0 +1,7 @@
+## OrmService definition.
+---
+name: OrmService
+class: \BoatWings\Orm\OrmService
+constructParams:
+  factory:
+    service: OrmFactoryService

@@ -1,0 +1,19 @@
+## OrmDataHandlerService definition.
+---
+name: OrmDataHandlerService
+class: \BoatWings\Orm\OrmDataHandler
+constructParams:
+  crudStrategy: 
+    class: \BoatWings\Orm\OrmDataHandlerStrategy\LocalMemoryDataStrategy
+  ormObjectFactory:
+    service: OrmFactoryService
+  ormObjectImporter:
+    class: \BoatWings\Orm\OrmObjectImporter
+    constructParams:
+      strategyContext: 
+        class: \BoatWings\Orm\OrmObjectImporterStrategy\JsonImportStrategy
+  ormObjectExporter:
+    class: \BoatWings\Orm\OrmObjectExporter
+    constructParams:
+      strategyContext:
+        class: \BoatWings\Orm\OrmObjectExporterStrategy\JsonExportStrategy

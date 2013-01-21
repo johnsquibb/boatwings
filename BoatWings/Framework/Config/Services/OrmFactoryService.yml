@@ -1,0 +1,14 @@
+## OrmFactoryService definition.
+---
+name: OrmFactoryService
+class: \BoatWings\Orm\OrmObjectFactory
+constructParams:
+  loader:
+    class: \BoatWings\Configuration\YamlConfigurationLoader
+    constructParams:
+      # Relative to framework $baseDirectory in BoatWings/Framework/Bootstrap.php
+      baseDirectory: BoatWings/Orm/Config/Examples
+  parser:
+    class: \BoatWings\Configuration\YamlConfigurationParser
+  builder:
+    class: \BoatWings\Orm\OrmObjectBuilder

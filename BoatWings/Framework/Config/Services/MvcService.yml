@@ -1,0 +1,4 @@
+## MvcService definition.
+---
+name: MvcService
+class: \BoatWings\Mvc\MvcService

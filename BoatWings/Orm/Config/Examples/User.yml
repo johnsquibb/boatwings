@@ -1,0 +1,20 @@
+## Sample user ORM configuration.
+---
+type: OrmObject
+members: 
+  firstName:
+    type: \BoatWings\Type\TypeString
+    value: John
+  lastName:
+    type: \BoatWings\Type\TypeString
+    value: Squibb
+  profile:
+    type: OrmObject
+    members:
+      favorites:
+        type: \BoatWings\Type\TypeArray
+        value: [Tacos, Burritos, Nachos]
+      todoList:
+        type: \BoatWings\Type\TypeArray
+        
+      
