@@ -3,10 +3,6 @@ namespace Application\Mvc\Controller;
 
 use BoatWings\Mvc\MvcController;
 use BoatWings\Mvc\ControllerResult;
-use BoatWings\Mvc\ModelResult;
-use BoatWings\Mvc\ViewResult;
-use Application\Mvc\Model\MyModel;
-use Application\Mvc\View\MyView;
 use BoatWings\Service\ServiceFactoryWrapper;
 
 class MyController extends MvcController
