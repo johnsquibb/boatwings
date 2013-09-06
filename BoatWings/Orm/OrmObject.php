@@ -1,6 +1,5 @@
 <?php
 namespace BoatWings\Orm;
-use BoatWings\Type\TypeTimestamp;
 
 class OrmObject extends OrmRouter
 {	

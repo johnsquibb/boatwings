@@ -22,7 +22,7 @@ use BoatWings\Service\ServiceFactoryWrapper;
 
 class OrmTest extends FrameworkTest
 {
-	public function testOrmObjectSetupViaGetterSetter()
+	public function testOrmObjectSetupViaGetterSetterWithInitialization()
 	{
 		$firstName = 'John';
 		$lastName = 'Squibb';
@@ -32,6 +32,34 @@ class OrmTest extends FrameworkTest
 		$user->hasLastName(new TypeString());
 		$user->setFirstName(new TypeString($firstName));	
 		$user->setLastName(new TypeString($lastName));
+		
+		$this->assertEquals($firstName, $user->getFirstName());
+		$this->assertEquals($lastName, $user->getLastName());		
+	}
+  
+	public function testOrmObjectSetupViaGetterSetterWithoutInitialization()
+	{
+		$firstName = 'John';
+		$lastName = 'Squibb';
+		
+		$user = new OrmObject();
+		$user->setFirstName(new TypeString($firstName));	
+		$user->setLastName(new TypeString($lastName));
+		
+		$this->assertEquals($firstName, $user->getFirstName());
+		$this->assertEquals($lastName, $user->getLastName());		
+	}
+  
+  /**
+   * @expectedException \Exception
+   */
+  public function testOrmObjectSetupViaGetterSetterWithInitializationInvalidOverwrite()
+	{
+		$user = new OrmObject();
+		$user->hasFirstName(new TypeString());
+		$user->hasLastName(new TypeString());
+		$user->setFirstName(new TypeArray());	
+		$user->setLastName(new TypeArray());
 		
 		$this->assertEquals($firstName, $user->getFirstName());
 		$this->assertEquals($lastName, $user->getLastName());		

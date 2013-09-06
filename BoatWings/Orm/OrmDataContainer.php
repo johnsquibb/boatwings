@@ -40,9 +40,10 @@ abstract class OrmDataContainer
 	{		
 		$normDataKey = $this->normalizeDataKey($dataKey);
 		
+    // Enforce type check if value already set.
+    // Prevents overwrite with incorrect type.
 		if (isset($this->ormData[$normDataKey]))
 		{
-			// Enforce type check.
 			if ($this->ormData[$normDataKey] instanceof $value) 
 			{
 				$this->ormData[$normDataKey] = $value;
@@ -52,7 +53,11 @@ abstract class OrmDataContainer
 				$expectedType = get_class($this->ormData[$normDataKey]);
 				throw new \Exception("Expected instance of {$expectedType} for '{$dataKey}'.");
 			}
-		}			
+		}
+    else
+    {
+      $this->initializeOrmDataValue($dataKey, $value);
+    }
 	}
 	
 	/**
