@@ -1,6 +1,6 @@
 Boat Wings
 ==========
-Boat Wings is designed to be a lightweight, Service-Oriented PHP micro framework for rapid prototype development.
+Boat Wings is an experimental framework.
 
 The key features of this project are:
 
@@ -10,4 +10,3 @@ The key features of this project are:
 * Model-View-Controller components. 
 * YAML as de-facto configuration standard. 
 
-The project is currently under development and is nearing the initial stages of completion.
